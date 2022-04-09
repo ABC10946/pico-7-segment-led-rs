@@ -17,7 +17,6 @@ use rp_pico as bsp;
 // use sparkfun_pro_micro_rp2040 as bsp;
 
 use bsp::hal::{
-    bsp_pins,
     clocks::{init_clocks_and_plls, Clock},
     pac,
     sio::Sio,
