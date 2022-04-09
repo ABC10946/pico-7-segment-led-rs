@@ -23,3 +23,7 @@ You have to connect PC and Raspberry Pi Pico.
 ```
 $ cargo run
 ```
+
+# Result
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Rust on Raspberry Pi Picoで7セグメントLED表示させることができた。<a href="https://t.co/YOHKWOdH9B">https://t.co/YOHKWOdH9B</a> <a href="https://t.co/i1oWQuwLl7">pic.twitter.com/i1oWQuwLl7</a></p>&mdash; ABC10946 v2.0 (@abc10946) <a href="https://twitter.com/abc10946/status/1512813359619473409?ref_src=twsrc%5Etfw">April 9, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
