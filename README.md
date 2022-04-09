@@ -26,4 +26,4 @@ $ cargo run
 
 # Result
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Rust on Raspberry Pi Picoで7セグメントLED表示させることができた。<a href="https://t.co/YOHKWOdH9B">https://t.co/YOHKWOdH9B</a> <a href="https://t.co/i1oWQuwLl7">pic.twitter.com/i1oWQuwLl7</a></p>&mdash; ABC10946 v2.0 (@abc10946) <a href="https://twitter.com/abc10946/status/1512813359619473409?ref_src=twsrc%5Etfw">April 9, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+![PXL_20220409_151217508](https://user-images.githubusercontent.com/42955848/162581034-a7843145-b8b4-4b5d-822c-376ed31daaee.jpg)
