@@ -27,3 +27,5 @@ $ cargo run
 # Result
 
 ![PXL_20220409_151217508](https://user-images.githubusercontent.com/42955848/162581034-a7843145-b8b4-4b5d-822c-376ed31daaee.jpg)
+
+Video on [twitter](https://twitter.com/abc10946/status/1512813359619473409?s=20&t=q2wcsElCCgTUeH1UmJj-0A)
