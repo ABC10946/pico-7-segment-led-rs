@@ -1,8 +1,8 @@
 [package]
-authors = ["the rp-rs team"]
+authors = ["ABC10946"]
 edition = "2018"
 readme = "README.md"
-name = "rp2040-project-template"
+name = "pico-7-segment-led"
 version = "0.1.0"
 resolver = "2"
 
