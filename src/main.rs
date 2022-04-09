@@ -82,30 +82,162 @@ fn main() -> ! {
     g_pin.set_high().unwrap();
     dp_pin.set_high().unwrap();
 
+    let mut num: u32 = 0; // displayed number
+    let ten: u32 = 10; // for power calculation
+    let mut frame_count = 0;
+    let delay_time = 1;
+
     loop {
-        a_pin.set_low().unwrap();
         one_digit_pin.set_high().unwrap();
-        delay.delay_ms(5);
-        a_pin.set_high().unwrap();
-        one_digit_pin.set_low().unwrap();
+        for digit in 1..=4 {
+            if digit == 1 {
+                one_digit_pin.set_high().unwrap();
+                second_digit_pin.set_low().unwrap();
+                third_digit_pin.set_low().unwrap();
+                fourth_digit_pin.set_low().unwrap();
+            } else if digit == 2 {
+                one_digit_pin.set_low().unwrap();
+                second_digit_pin.set_high().unwrap();
+                third_digit_pin.set_low().unwrap();
+                fourth_digit_pin.set_low().unwrap();
+            } else if digit == 3 {
+                one_digit_pin.set_low().unwrap();
+                second_digit_pin.set_low().unwrap();
+                third_digit_pin.set_high().unwrap();
+                fourth_digit_pin.set_low().unwrap();
+            } else if digit == 4 {
+                one_digit_pin.set_low().unwrap();
+                second_digit_pin.set_low().unwrap();
+                third_digit_pin.set_low().unwrap();
+                fourth_digit_pin.set_high().unwrap();
+            }
+            let display_num = (num % ten.pow(digit)) / (ten.pow(digit - 1));
+            match display_num % 10 {
+                0 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_low().unwrap();
+                    e_pin.set_low().unwrap();
+                    f_pin.set_low().unwrap();
+                    g_pin.set_high().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                1 => {
+                    a_pin.set_high().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_high().unwrap();
+                    e_pin.set_high().unwrap();
+                    f_pin.set_high().unwrap();
+                    g_pin.set_high().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                2 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_high().unwrap();
+                    d_pin.set_low().unwrap();
+                    e_pin.set_low().unwrap();
+                    f_pin.set_high().unwrap();
+                    g_pin.set_low().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                3 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_low().unwrap();
+                    e_pin.set_high().unwrap();
+                    f_pin.set_high().unwrap();
+                    g_pin.set_low().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                4 => {
+                    a_pin.set_high().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_high().unwrap();
+                    e_pin.set_high().unwrap();
+                    f_pin.set_low().unwrap();
+                    g_pin.set_low().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                5 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_high().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_low().unwrap();
+                    e_pin.set_high().unwrap();
+                    f_pin.set_low().unwrap();
+                    g_pin.set_low().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                6 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_high().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_low().unwrap();
+                    e_pin.set_low().unwrap();
+                    f_pin.set_low().unwrap();
+                    g_pin.set_low().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                7 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_high().unwrap();
+                    e_pin.set_high().unwrap();
+                    f_pin.set_high().unwrap();
+                    g_pin.set_high().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                8 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_low().unwrap();
+                    e_pin.set_low().unwrap();
+                    f_pin.set_low().unwrap();
+                    g_pin.set_low().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                9 => {
+                    a_pin.set_low().unwrap();
+                    b_pin.set_low().unwrap();
+                    c_pin.set_low().unwrap();
+                    d_pin.set_low().unwrap();
+                    e_pin.set_high().unwrap();
+                    f_pin.set_low().unwrap();
+                    g_pin.set_low().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+                _ => {
+                    a_pin.set_high().unwrap();
+                    b_pin.set_high().unwrap();
+                    c_pin.set_high().unwrap();
+                    d_pin.set_high().unwrap();
+                    e_pin.set_high().unwrap();
+                    f_pin.set_high().unwrap();
+                    g_pin.set_high().unwrap();
+                    dp_pin.set_high().unwrap();
+                }
+            }
+            delay.delay_ms(delay_time);
+        }
 
-        b_pin.set_low().unwrap();
-        second_digit_pin.set_high().unwrap();
-        delay.delay_ms(5);
-        b_pin.set_high().unwrap();
-        second_digit_pin.set_low().unwrap();
+        frame_count += 1;
+        // increment variable num in 1 seconds
+        if frame_count == (1000 / (delay_time * 4)) {
+            frame_count = 0;
+            num += 1;
+        }
 
-        c_pin.set_low().unwrap();
-        third_digit_pin.set_high().unwrap();
-        delay.delay_ms(5);
-        c_pin.set_high().unwrap();
-        third_digit_pin.set_low().unwrap();
-
-        d_pin.set_low().unwrap();
-        fourth_digit_pin.set_high().unwrap();
-        delay.delay_ms(5);
-        d_pin.set_high().unwrap();
-        fourth_digit_pin.set_low().unwrap();
+        // if num over the number of digits, reset num
+        if num == 10000 {
+            num = 0;
+        }
     }
 }
 
