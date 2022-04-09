@@ -17,6 +17,7 @@ use rp_pico as bsp;
 // use sparkfun_pro_micro_rp2040 as bsp;
 
 use bsp::hal::{
+    bsp_pins,
     clocks::{init_clocks_and_plls, Clock},
     pac,
     sio::Sio,
@@ -54,15 +55,57 @@ fn main() -> ! {
         &mut pac.RESETS,
     );
 
-    let mut led_pin = pins.led.into_push_pull_output();
+    let mut a_pin = pins.gpio0.into_push_pull_output();
+    let mut b_pin = pins.gpio1.into_push_pull_output();
+    let mut c_pin = pins.gpio2.into_push_pull_output();
+    let mut d_pin = pins.gpio3.into_push_pull_output();
+    let mut e_pin = pins.gpio4.into_push_pull_output();
+    let mut f_pin = pins.gpio5.into_push_pull_output();
+    let mut g_pin = pins.gpio6.into_push_pull_output();
+    let mut dp_pin = pins.gpio7.into_push_pull_output();
+    let mut one_digit_pin = pins.gpio8.into_push_pull_output();
+    let mut second_digit_pin = pins.gpio9.into_push_pull_output();
+    let mut third_digit_pin = pins.gpio10.into_push_pull_output();
+    let mut fourth_digit_pin = pins.gpio11.into_push_pull_output();
+
+    one_digit_pin.set_low().unwrap();
+    second_digit_pin.set_low().unwrap();
+    third_digit_pin.set_low().unwrap();
+    fourth_digit_pin.set_low().unwrap();
+
+    a_pin.set_high().unwrap();
+    b_pin.set_high().unwrap();
+    c_pin.set_high().unwrap();
+    d_pin.set_high().unwrap();
+    e_pin.set_high().unwrap();
+    f_pin.set_high().unwrap();
+    g_pin.set_high().unwrap();
+    dp_pin.set_high().unwrap();
 
     loop {
-        info!("on!");
-        led_pin.set_high().unwrap();
-        delay.delay_ms(500);
-        info!("off!");
-        led_pin.set_low().unwrap();
-        delay.delay_ms(500);
+        a_pin.set_low().unwrap();
+        one_digit_pin.set_high().unwrap();
+        delay.delay_ms(5);
+        a_pin.set_high().unwrap();
+        one_digit_pin.set_low().unwrap();
+
+        b_pin.set_low().unwrap();
+        second_digit_pin.set_high().unwrap();
+        delay.delay_ms(5);
+        b_pin.set_high().unwrap();
+        second_digit_pin.set_low().unwrap();
+
+        c_pin.set_low().unwrap();
+        third_digit_pin.set_high().unwrap();
+        delay.delay_ms(5);
+        c_pin.set_high().unwrap();
+        third_digit_pin.set_low().unwrap();
+
+        d_pin.set_low().unwrap();
+        fourth_digit_pin.set_high().unwrap();
+        delay.delay_ms(5);
+        d_pin.set_high().unwrap();
+        fourth_digit_pin.set_low().unwrap();
     }
 }
 
