@@ -54,17 +54,17 @@ fn main() -> ! {
         &mut pac.RESETS,
     );
 
-    let mut a_pin = pins.gpio0.into_push_pull_output();
-    let mut b_pin = pins.gpio1.into_push_pull_output();
-    let mut c_pin = pins.gpio2.into_push_pull_output();
-    let mut d_pin = pins.gpio3.into_push_pull_output();
-    let mut e_pin = pins.gpio4.into_push_pull_output();
-    let mut f_pin = pins.gpio5.into_push_pull_output();
-    let mut g_pin = pins.gpio6.into_push_pull_output();
-    let mut dp_pin = pins.gpio7.into_push_pull_output();
-    let mut one_digit_pin = pins.gpio8.into_push_pull_output();
-    let mut second_digit_pin = pins.gpio9.into_push_pull_output();
-    let mut third_digit_pin = pins.gpio10.into_push_pull_output();
+    let mut a_pin = pins.gpio10.into_push_pull_output();
+    let mut b_pin = pins.gpio6.into_push_pull_output();
+    let mut c_pin = pins.gpio3.into_push_pull_output();
+    let mut d_pin = pins.gpio1.into_push_pull_output();
+    let mut e_pin = pins.gpio0.into_push_pull_output();
+    let mut f_pin = pins.gpio9.into_push_pull_output();
+    let mut g_pin = pins.gpio4.into_push_pull_output();
+    let mut dp_pin = pins.gpio2.into_push_pull_output();
+    let mut one_digit_pin = pins.gpio5.into_push_pull_output();
+    let mut second_digit_pin = pins.gpio7.into_push_pull_output();
+    let mut third_digit_pin = pins.gpio8.into_push_pull_output();
     let mut fourth_digit_pin = pins.gpio11.into_push_pull_output();
 
     one_digit_pin.set_low().unwrap();
