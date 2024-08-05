@@ -4,6 +4,13 @@ This is the embedded Rust program to operate 7 segment led display module.
 
 This project based on [rp2040-project-template](https://github.com/rp-rs/rp2040-project-template)
 
+# Requirements
+
+```
+$ rustup target add thumbv6m-none-eabi
+$ cargo install flip-link
+```
+
 # Hardware
 
 - [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)
